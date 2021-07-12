@@ -10,7 +10,7 @@ public class InsertionSort {
         for (int i_start = 0; i_start < nums.length; i_start++) {
             for (int j_run = i_start - 1; j_run >= 0; j_run--) {
                 if (nums[j_run + 1] > nums[j_run]) {
-                    swag(nums,j_run + 1, j_run);
+                    swap(nums,j_run + 1, j_run);
                 }else {
                     break;
                 }
@@ -25,7 +25,7 @@ public class InsertionSort {
         for (int i = 1; i < array.length; i++) {
             for (int j = i; j > 0; j--) {
                 if(array[j]>array[j-1])break;
-                swag(array,j,j-1);
+                swap(array,j,j-1);
                 count++;
             }
         }
@@ -45,10 +45,10 @@ public class InsertionSort {
     static void insertionSort_i(int[] array,int round,int check){
             if(0==check)return;
             if(array[check]>array[check-1])return;
-            swag(array,check,check-1);
+            swap(array,check,check-1);
         insertionSort_i(array,round,check-1);
     }
-    private static void swag(int[] array, int left, int right) {
+    private static void swap(int[] array, int left, int right) {
         int temp=array[right];
         array[right]=array[left];
         array[left]=temp;

@@ -8,7 +8,7 @@ public class BubleSortPractice {
         for (int j = array.length-1; j >0; j--) {
             for (int i = 0; i < j; i++) {
                 if(array[i]>array[i+1]){
-                    swag(array,i,i+1);
+                    swap(array,i,i+1);
                 }
             }
         }
@@ -27,12 +27,12 @@ static void bubleSortRe(int[] array){
     private static void bubleSort_i(int[] array, int round, int check) {
         if(check==round)return;
         if(array[check]>array[check+1]){
-            swag(array,check,check+1);
+            swap(array,check,check+1);
         }
         bubleSort_i(array,round,check+1);
     }
 
-    private static void swag(int[] array, int i, int i1) {
+    private static void swap(int[] array, int i, int i1) {
         int temp=array[i];
         array[i]=array[i+1];
         array[i+1]=temp;
